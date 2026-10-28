@@ -1,0 +1,523 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0c1b31;
+    --navy-light: #172d49;
+    --gold: #d8b56d;
+    --white: #ffffff;
+    --light: #f5f7fa;
+    --text: #5f6c7c;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #b58a3a;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #b58a3a;
+}
+
+nav .nav-button {
+    background: var(--navy);
+    color: var(--white);
+    padding: 11px 18px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--navy);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+    padding: 85px 7%;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 570px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.subtitle,
+.section-label {
+    color: #b58a3a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 4.4vw, 59px);
+    line-height: 1.18;
+    margin-bottom: 22px;
+}
+
+.hero h1 span,
+.about h2 span,
+.jobs h2 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: #c1cad6;
+    max-width: 510px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.primary {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.primary:hover {
+    background: #edcc88;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    color: var(--white);
+    border: 1px solid #64748b;
+}
+
+.secondary:hover {
+    background: #ffffff12;
+}
+
+.hero-image {
+    min-height: 360px;
+    position: relative;
+    background:
+        linear-gradient(0deg, rgba(12, 27, 49, 0.55), rgba(12, 27, 49, 0.05)),
+        url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.image-card {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    right: 20px;
+    background: var(--white);
+    color: var(--navy);
+    padding: 20px;
+    box-shadow: 0 10px 35px #0002;
+}
+
+.image-card h3 {
+    font-size: 16px;
+}
+
+.image-card p {
+    font-size: 12px;
+    color: var(--text);
+    margin-top: 5px;
+}
+
+.section {
+    padding: 85px 7%;
+}
+
+.about {
+    text-align: center;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.about h2,
+.jobs h2,
+.contact h2,
+.services h2,
+.industries h2 {
+    font-size: clamp(30px, 3.3vw, 43px);
+    line-height: 1.25;
+    margin-bottom: 22px;
+}
+
+.about p {
+    max-width: 790px;
+    margin: auto;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.services {
+    background: var(--light);
+    text-align: center;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 28px 23px;
+    border: 1px solid #e8edf2;
+    transition: 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #10223b10;
+}
+
+.icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: #f4ead5;
+    color: #a47b31;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.service-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 12px;
+    color: var(--text);
+}
+
+.industries {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.industry-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.industry-card {
+    padding: 25px;
+    border: 1px solid #ffffff22;
+    background: #ffffff08;
+    transition: 0.25s;
+}
+
+.industry-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.industry-card span {
+    font-size: 28px;
+    color: var(--gold);
+}
+
+.industry-card h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.industry-card p {
+    color: #b6c1cf;
+    font-size: 12px;
+}
+
+.jobs {
+    background: var(--light);
+    text-align: center;
+}
+
+.section-description {
+    color: var(--text);
+    margin-bottom: 28px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 720px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid #e7ebf0;
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #dfe5eb;
+    background: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+    border-color: #b58a3a;
+}
+
+.form-box textarea {
+    resize: vertical;
+}
+
+.form-box button {
+    width: 100%;
+}
+
+.form-status {
+    margin-top: 12px;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.contact {
+    background: var(--navy-light);
+    color: var(--white);
+    text-align: center;
+}
+
+.contact > p {
+    color: #c1cad6;
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact .form-box {
+    background: #ffffff;
+}
+
+footer {
+    background: #081426;
+    color: var(--white);
+    padding: 45px 7% 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer-logo span {
+    color: var(--gold);
+}
+
+footer > p {
+    font-size: 12px;
+    color: #aab5c4;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 23px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #d1d8e1;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    border-top: 1px solid #ffffff20;
+    padding-top: 18px;
+}
+
+@media (max-width: 950px) {
+    nav {
+        gap: 14px;
+    }
+
+    .hero {
+        gap: 25px;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .industry-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 17px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 18px 6%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 10px 20px #0001;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 0;
+    }
+
+    nav .nav-button {
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 6%;
+    }
+
+    .hero-image {
+        min-height: 280px;
+        margin: 0 0 20px 12px;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .industry-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-box {
+        padding: 22px 17px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+}
+```
